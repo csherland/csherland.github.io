@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-  <head>
-    <title>Christian Sherland, Designer meets Developer</title>
+<div class="home">
 
-    <!-- stylesheets -->
-    <link rel="stylesheet" type="text/css" href="public/css/main.css">
-  </head>
+  <h1 class="page-heading">Posts</h1>
 
-  <body>
-    <nav>
-      <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-  </body>
-
-</html>
+</div>

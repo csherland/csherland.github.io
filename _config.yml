@@ -1,15 +1,17 @@
-#
-# This file contains configuration flags to customize your site
-#
+# Site settings
+title: Christian Sherland
+description: >
+  Cool guy.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://christiansherland.me" # the base hostname & protocol for your site
 
-# Name of your site (displayed in the header)
-name: Christian Sherland
+# Contact and social info
+email: christiansherland@gmail.com
+twitter_username: csherland
+github_username:  csherland
 
-# Short bio or description (displayed in the header)
-description: Designer meets developer
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+# Build settings
+markdown: kramdown
 
 # Gems
 gems:
