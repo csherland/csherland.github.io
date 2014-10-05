@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="{{ site.baseurl }}" class="navbar-brand">{{ site.title }}</a>
+        <a href="{{ site.url }}" class="navbar-brand">{{ site.title }}</a>
     </div>
 
     <!-- Nav links -->
@@ -17,7 +17,7 @@
         <ul class="nav navbar-nav navbar-right">
           {% for node in site.pages %}
             {% if node.title %}
-              <li><a class="page-link" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a></li>
+              <li><a class="page-link" href="{{ node.url | prepend: site.url }}">{{ node.title }}</a></li>
             {% endif %}
           {% endfor %}
         </ul>
