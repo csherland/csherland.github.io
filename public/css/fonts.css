@@ -2,10 +2,24 @@ body h1 {
   font-family: Oswald, sans-serif;
   font-weight: bold;
   font-size: 50px;
+  color: white
 }
 
-p {
+p, li {
   font-family: Georgia;
   font-size: 16px;
   font-weight: normal;
+  color: white
+}
+
+a {
+  text-decoration: none;
+}
+
+a, a:visited {
+  color: white;
+}
+
+a:hover {
+  color: #0000DF;
 }
