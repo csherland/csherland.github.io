@@ -6,3 +6,8 @@ baseurl: ""
 twitter_username: csherland
 github_username: csherland
 author: Christian Sherland
+
+# Styles
+sass:
+  sass_dir: css
+  style: :compressed
