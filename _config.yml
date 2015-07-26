@@ -14,6 +14,11 @@ email_address: christiansherland@gmail.com
 markdown: redcarpet
 markdown_ext: md
 
+# Collections
+collections:
+  projects:
+    output: true
+
 # Styles
 sass:
   sass_dir: css
