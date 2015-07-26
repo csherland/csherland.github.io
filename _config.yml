@@ -1,9 +1,8 @@
 # Site settings
 title: Christian Sherland
-description: Me
 url: http://christiansherland.me
 author: Christian Sherland
-baseurl: ""
+description: Me
 
 # Social info
 twitter_username: csherland
@@ -14,6 +13,7 @@ email_address: christiansherland@gmail.com
 markdown: redcarpet
 markdown_ext: md
 
+# Custom collection for projects
 collections:
   projects:
     output: true
