@@ -4,14 +4,6 @@ title: Projects
 permalink: /projects/
 ---
 
-Yo!
-{{ site.collections }}
-
-{{ site }}
-{% for collection in site.collections %}
-  {{ collection }}
-{% endfor %}
-
 {% for project in site.projects limit:20 %}
   <div class="project-card">
     <span class="project-meta">{{ project.date | date: "%b %-d, %Y" }}</span>
