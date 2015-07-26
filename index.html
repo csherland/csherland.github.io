@@ -1,53 +1,12 @@
-<!doctype html>
-<html>
-
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Lorem Ipsum</title>
-    <link rel="canonical" href="http://www.christiansherland.me">
-
-    <link rel="stylesheet" type="text/css" href="public/css/main.css">
-    <link rel="stylesheet" type="text/css" href="public/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="public/css/landing-page.css">
-
-    <!-- vendor -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  </head>
-
-  <body>
-    <div class="content">
-      <h1>Lorem Ipsum</h1>
-
-      <ul class="navigation">
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-
-      <footer>
-        © Christian Sherland, 2015
-        <ul class="social">
-          <li><a href="http://www.twitter.com/csherland"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="http://www.github.com/csherland">github</a></li>
-          <li><a href="#">linkedin</a></li>
-        </ul>
-      </footer>
+---
+layout: default
+---
+<div class="home">
+  {% for post in site.posts limit:20 %}
+    <div class="post_link">
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <p>{{ post.content }}</p>
     </div>
-
-    <!-- Google Analytics -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-44008822-4','auto');ga('send','pageview');
-    </script>
-  </body>
-
-</html>
+  {% endfor %}
+</div>
