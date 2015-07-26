@@ -1,4 +1,4 @@
 csherland.github.io
 ===================
 
-[My personal site](christiansherland.me)
+[My personal site](http://christiansherland.me)
