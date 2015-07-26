@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-permalink: /projects
+permalink: /projects/
 ---
 
 {% for project in site.projects limit:20 %}
