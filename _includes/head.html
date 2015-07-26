@@ -5,7 +5,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <title>Lorem Ipsum</title>
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="canonical" href="http://www.christiansherland.me">
 
   <!-- vendor -->
