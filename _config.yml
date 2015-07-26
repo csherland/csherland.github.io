@@ -2,10 +2,17 @@
 title: Christian Sherland
 description: Me
 url: http://christiansherland.me
+author: Christian Sherland
 baseurl: ""
+
+# Social info
 twitter_username: csherland
 github_username: csherland
-author: Christian Sherland
+email_address: christiansherland@gmail.com
+
+# Build settings
+markdown: redcarpet
+markdown_ext: md
 
 # Styles
 sass:
