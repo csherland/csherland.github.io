@@ -9,7 +9,7 @@ github_username: csherland
 email_address: christiansherland@gmail.com
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 markdown_ext: md
 
 # Styles
