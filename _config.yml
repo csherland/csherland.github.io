@@ -5,20 +5,12 @@ author: Christian Sherland
 description: Me
 
 # Social info
-twitter_username: csherland
 github_username: csherland
 email_address: christiansherland@gmail.com
 
 # Build settings
 markdown: redcarpet
 markdown_ext: md
-
-# Custom collection for projects
-collections:
-  projects:
-    output: true
-    title: Projects
-    permalink: /projects/:path/
 
 # Styles
 sass:
