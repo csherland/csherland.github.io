@@ -34,11 +34,6 @@
   }
   &__hello {
     font-weight: 300;
-    .wave-hand {
-      background-image: url('../img/emojis/wave.png');
-      margin-left: 10px;
-      cursor: pointer;
-    }
   }
   &__tagline {
     font-weight: 300;
@@ -58,19 +53,6 @@
     font-weight: 400;
     @include tablet {
       font-size: 1rem;
-    }
-    .emoji {
-      &.pointer {
-        background-image: url('../img/emojis/pointright.png');
-        width: 30px;
-        height: 30px;
-        margin: 0 5px;
-        vertical-align: text-bottom;
-        @include tablet {
-          width: 25px;
-          height: 25px;
-        }
-      }
     }
     .highlight-link {
       @include transition;

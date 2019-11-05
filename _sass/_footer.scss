@@ -30,12 +30,6 @@
         display: block;
       }
     }
-    .emoji {
-      width: 20px;
-      height: 20px;
-      margin: 0 3px;
-      vertical-align: text-bottom;
-    }
   }
   &__links {
     @include tablet {
