@@ -20,7 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: $white;
   color: $dark-grey;
-  font-family: $Apercu;
+  font-family: $sans-serif-fonts;
   line-height: 1.5;
   width: 100%;
 
@@ -187,7 +187,7 @@ strong {
 }
 
 .small {
-  font-family: 'Inconsolata', monospace;
+  font-family: $monospace-fonts;
   font-size: 0.85rem;
   display: inline-block;
   margin-top: 15px;

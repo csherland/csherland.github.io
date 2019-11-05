@@ -16,7 +16,7 @@
     }
     &__time {
       font-size: 0.9rem;
-      font-family: 'Inconsolata', monospace;
+      font-family: $monospace-fonts;
       @include mobile {
         font-size: 0.8rem;
       }
