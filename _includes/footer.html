@@ -10,7 +10,7 @@
   </div>
   <div class="footer__links">
     {% for link in site.social %}
-    <a href="{{link.url}}" target="_blank" title="{{link.title}}">
+    <a href="{{link.url}}" rel="noopener" title="{{link.title}}">
       <span class="text">{{link.title}}</span>
     </a>
     {% endfor %}
