@@ -9,13 +9,22 @@ $off-white: #e7e7e7;
 $white: #ffffff;
 $yellow: #ffdc00;
 
-// Fonts
-$sans-serif-fonts: 'Helvetic Neue', system, system-ui, -apple-system,
-  BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-$monospace-fonts: 'SFMono-Regular', Consolas, 'Liberation Mono',
-  Menlo, Courier, monospace; 
+// Font families
+$sans-serif-fonts: 'Helvetic Neue', system, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+$monospace-fonts: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; 
 
-// Sizes & Media queries
+// Font weights
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+// Font sizes
+$font-size-lg: 1rem;
+$font-size-md: .9rem;
+$font-size-sm: .8rem;
+
+// Sizes & Breakpoints 
 $site-max-width: 1440px;
 $desktop-width: 1024px;
 $tablet-width: 768px;

@@ -15,20 +15,12 @@
     padding: 50px 30px;
   }
   &__copyright {
-    font-weight: 700;
+    font-weight: $font-weight-semibold;
     width: 200px;
     @include tablet {
       width: auto;
       text-align: center;
       margin-bottom: 25px;
-    }
-    .top, .bottom {
-      @include tablet {
-        display: inline-block;
-      }
-      @include mobile {
-        display: block;
-      }
     }
   }
   &__links {
@@ -41,7 +33,7 @@
       display: inline-block;
       color: $blue !important;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: $font-weight-semibold;
       margin: 0 15px;
       outline: none;
       @include desktop {
@@ -76,13 +68,6 @@
         @include tablet {
           display: none;
         }
-      }
-    }
-    img {
-      display: none;
-      width: 22px;
-      @include tablet {
-        display: inline-block;
       }
     }
   }
