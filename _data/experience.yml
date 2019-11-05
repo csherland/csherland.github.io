@@ -1,4 +1,9 @@
-- company:
-  url:
-  time:
-  position:
+- company: One World
+  url: https://www.oneworld.com
+  time: July 2018 - Present
+  position: Software Engineer
+
+- company: Dow Jones
+  url: https://www.dowjones.com
+  time: June 2014 - July 2018
+  position: Principal Software Engineer
