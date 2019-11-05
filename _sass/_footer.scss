@@ -15,7 +15,7 @@
     padding: 50px 30px;
   }
   &__copyright {
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-normal;
     width: 200px;
     @include tablet {
       width: auto;
@@ -62,7 +62,7 @@
         transform: translateY(0px);
       }
       .text {
-        font-size: 0.9rem;
+        font-size: $font-size-sm;
         display: inline;
         letter-spacing: 1px;
         @include tablet {

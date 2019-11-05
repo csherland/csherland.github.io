@@ -1,6 +1,5 @@
 .intro {
   padding: 120px 100px;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -17,7 +16,7 @@
   }
 
   &__hello, &__tagline {
-    font-size: 2.5rem;
+    font-size: $font-size-lg;
     .emoji {
       width: 40px;
       height: 40px;
@@ -28,7 +27,7 @@
   }
   &__tagline {
     font-weight: $font-weight-light;
-    max-width: 700px;
+    max-width: $site-max-width / 2;
     .name {
       font-weight: $font-weight-bold;
     }
@@ -40,11 +39,8 @@
     }
   }
   &__contact {
-    font-size: 1.25rem;
+    font-size: $font-size-md;
     font-weight: $font-weight-normal;
-    @include tablet {
-      font-size: 1rem;
-    }
     a {
       @include transition;
       font-weight: $font-weight-normal;

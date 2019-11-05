@@ -135,7 +135,7 @@ img {
   }
   &__content {
     font-weight: $font-weight-normal;
-    font-size: 1rem;
+    font-size: $font-size-md;
     width: 100%;
     max-width: 650px;
     @include tablet {

@@ -15,18 +15,8 @@
       font-weight: $font-weight-bold;
     }
     &__time {
-      font-size: 0.9rem;
+      font-size: $font-size-sm;
       font-family: $monospace-fonts;
-      @include mobile {
-        font-size: 0.8rem;
-      }
-    }
-  }
-  .arrow-link {
-    font-size: 1.25rem;
-    &:after {
-      width: 20px;
-      height: 20px;
     }
   }
 }
