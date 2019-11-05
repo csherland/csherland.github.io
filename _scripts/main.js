@@ -1,25 +1,4 @@
 $(function() {
-  const d = new Date();
-  const hours = d.getHours();
-  const night = hours >= 19 || hours <= 7; // between 7pm and 7am
-  const body = document.querySelector('body');
-  const toggle = document.getElementById('toggle');
-  const input = document.getElementById('switch');
-
-  if (night) {
-    input.checked = true;
-    body.classList.add('night');
-  }
-
-  toggle.addEventListener('click', function() {
-    const isChecked = input.checked;
-    if (isChecked) {
-      body.classList.remove('night');
-    } else {
-      body.classList.add('night');
-    }
-  });
-
   const introHeight = document.querySelector('.intro').offsetHeight;
   const topButton = document.getElementById('top-button');
   const $topButton = $('#top-button');
@@ -69,9 +48,4 @@ $(function() {
     viewFactor: 0.3,
   });
 
-  sr.reveal('.background');
-  sr.reveal('.skills');
-  sr.reveal('.experience', { viewFactor: 0.2 });
-  sr.reveal('.featured-projects', { viewFactor: 0.1 });
-  sr.reveal('.other-projects', { viewFactor: 0.05 });
 });
