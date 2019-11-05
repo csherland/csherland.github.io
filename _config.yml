@@ -26,12 +26,7 @@ exclude:
   - 'Gemfile.lock'
   - '*.gemspec'
   - 'README.md'
-
-keep_files:
-  - 'CNAME'
-  - '.git'
-  - '.gitignore'
+  - 'LICENSE.md'
 
 plugins_dir:
-  - jekyll-minifier
   - jekyll-sitemap
