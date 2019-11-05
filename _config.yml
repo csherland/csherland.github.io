@@ -17,7 +17,7 @@ social:
     url: https://www.linkedin.com/in/###
 
 sass:
-  sass_dir: _scss
+  sass_dir: _assets/css
   style: compressed
 
 # Build settings
