@@ -1,26 +1,20 @@
 # Site settings
-name: Brittany Chiang
-title: Brittany Chiang | Front End Software Engineer
-description: Design-minded front-end software engineer focused on building beautiful interfaces and experiences
-url: https://bchiang7.github.io/
+name: Christian Sherland
+title: Christian Sherland | Full-stack Software Engineer
+description: NYC Based Software engineer
+url: https://csherland.github.io/
 baseurl: ''
-email: brittany.chiang@gmail.com
-cover: https://bchiang7.github.io/img/og.png
-logo: https://bchiang7.github.io/img/emojis/technologist.png
-resume: https://bchiang7.github.io/resume.pdf
+email: christiansherland@gmail.com
+cover: http://google.com
+logo: http://google.com
+resume: http://google.com
 social:
   - title: email
-    url: mailto:brittany.chiang@gmail.com
-  - title: twitter
-    url: https://twitter.com/bchiang7
-  - title: instagram
-    url: https://instagram.com/bchiang7
-  - title: codepen
-    url: http://codepen.io/bchiang7
+    url: mailto:christiansherland@gmail.com
   - title: github
-    url: https://github.com/bchiang7
+    url: https://github.com/csherland
   - title: linkedin
-    url: https://www.linkedin.com/in/bchiang7
+    url: https://www.linkedin.com/in/###
 
 # Build settings
 markdown: kramdown
