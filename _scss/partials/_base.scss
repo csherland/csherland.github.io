@@ -12,6 +12,7 @@ html {
   background: $yellow;
 }
 
+
 html,
 body {
   margin: 0;
@@ -24,7 +25,7 @@ body {
   line-height: 1.5;
   width: 100%;
 
-  &.night {
+  @media (prefers-color-scheme: dark) {
     background-color: $night;
     color: $slate;
     ::selection {
@@ -34,7 +35,6 @@ body {
     a,
     strong,
     .intro,
-    .skills .skillz__category__label,
     .experience .job__time,
     .footer__copyright,
     .status {
