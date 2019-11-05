@@ -158,13 +158,3 @@ strong {
     }
   }
 }
-
-.small {
-  font-family: $monospace-fonts;
-  font-size: 0.85rem;
-  display: inline-block;
-  margin-top: 15px;
-  &:after {
-    display: none;
-  }
-}
