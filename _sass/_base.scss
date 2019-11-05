@@ -86,7 +86,7 @@ strong {
   display: flex;
   justify-content: center;
   padding: 100px 170px;
-  @include thirteen {
+  @include desktop {
     padding: 100px;
   }
   @include desktop {
@@ -109,9 +109,6 @@ strong {
     letter-spacing: 2px;
     @include desktop {
       margin-right: 50px;
-    }
-    @include little-desktop {
-      width: 150px;
     }
     @include tablet {
       text-align: left;

@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 1440px;
+  max-width: $site-max-width;
   margin: 0 auto;
-  @include weird-medium {
+  @include tablet {
     padding: 120px 70px;
   }
-  @include phablet {
+  @include tablet {
     padding: 120px 50px;
   }
   @include mobile {
@@ -24,14 +24,8 @@
     @include tablet {
       font-size: 2rem;
     }
-    @include phablet {
+    @include mobile {
       font-size: 1.75rem;
-    }
-    @include small-mobile {
-      font-size: 1.5rem;
-    }
-    @include tiny-mobile {
-      font-size: 1.4rem;
     }
     .emoji {
       width: 40px;
@@ -44,10 +38,6 @@
         width: 30px;
         height: 30px;
       }
-      @include small-mobile {
-        width: 25px;
-        height: 25px;
-      }
     }
   }
   &__hello {
@@ -56,38 +46,6 @@
       background-image: url('../img/emojis/wave.png');
       margin-left: 10px;
       cursor: pointer;
-
-      &.animated {
-        animation-duration: 1s;
-        animation-fill-mode: both;
-      }
-      &.wave {
-        animation-name: wave;
-      }
-
-      @keyframes wave {
-        from {
-          transform: none;
-        }
-        15% {
-          transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
-        }
-        30% {
-          transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 7deg);
-        }
-        45% {
-          transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -10deg);
-        }
-        60% {
-          transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 5deg);
-        }
-        75% {
-          transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -2deg);
-        }
-        to {
-          transform: none;
-        }
-      }
     }
   }
   &__tagline {
@@ -106,7 +64,7 @@
   &__contact {
     font-size: 1.25rem;
     font-weight: 400;
-    @include phablet {
+    @include tablet {
       font-size: 1rem;
     }
     .emoji {
@@ -116,7 +74,7 @@
         height: 30px;
         margin: 0 5px;
         vertical-align: text-bottom;
-        @include phablet {
+        @include tablet {
           width: 25px;
           height: 25px;
         }
