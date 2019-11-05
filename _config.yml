@@ -16,6 +16,10 @@ social:
   - title: linkedin
     url: https://www.linkedin.com/in/###
 
+sass:
+  sass_dir: _scss
+  style: compressed
+
 # Build settings
 markdown: kramdown
 
