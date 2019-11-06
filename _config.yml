@@ -5,15 +5,14 @@ description: NYC Based Software engineer
 url: https://csherland.github.io/
 baseurl: ''
 email: christiansherland@gmail.com
-logo: http://google.com
-resume: http://google.com
+resume: #
 social:
   - title: email
     url: mailto:christiansherland@gmail.com
   - title: github
     url: https://github.com/csherland
   - title: linkedin
-    url: https://www.linkedin.com/in/###
+    url: https://www.linkedin.com/in/christian-sherland-0785725b/
 
 sass:
   style: compressed

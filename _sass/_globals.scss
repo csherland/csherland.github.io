@@ -1,4 +1,4 @@
-// Colors
+// Colors -- I feel like theres a better way to organize this
 $night: #171c28;
 $black: #36363c;
 $dark-grey: #444452;
@@ -8,6 +8,23 @@ $blue: #007bff;
 $off-white: #e7e7e7;
 $white: #ffffff;
 $yellow: #ffdc00;
+
+/**
+ * Color Schemes
+ */
+// Dark
+$background-dark: #161c28;
+$body-text-dark: #ffffff;
+$link-text-dark: #ffffff;
+$highlight-dark: #007bff;
+$selection-dark: #ffdc00;
+
+// Light
+$background-light: #e7e7e7;
+$body-text-light: #36363c;
+$link-text-light: #36363c;
+$highlight-light: #007bff;
+$selection-light: #ffdc00;
 
 // Font families
 $sans-serif-fonts: 'Helvetic Neue', system, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
