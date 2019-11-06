@@ -1,12 +1,13 @@
 .experience {
   .jobs {
-    margin-bottom: 100px;
+    margin-bottom: 75px;
   }
   .job {
     margin-bottom: 25px;
     .time-place {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       @include mobile {
         display: block;
       }

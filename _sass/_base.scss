@@ -8,23 +8,18 @@ html {
   box-sizing: inherit;
 }
 
-
 ::selection {
   background: var(--color-highlight);
   color: var(--color-accent);
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background);
   color: var(--color-body-text);
   font-family: $sans-serif-fonts;
   line-height: 1.5;
-  width: 100%;
 }
 
 a {
@@ -39,7 +34,6 @@ a {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 1px;
     background: var(--color-accent);
     content: '';
     opacity: 0;
