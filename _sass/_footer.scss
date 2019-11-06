@@ -30,7 +30,7 @@
     a {
       position: relative;
       display: inline-block;
-      color: $blue !important;
+      color: var(--color-link-text) !important;
       font-weight: $font-weight-semibold;
       margin: 0 15px;
       outline: none;

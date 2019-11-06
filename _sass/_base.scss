@@ -8,8 +8,10 @@ html {
   box-sizing: inherit;
 }
 
+
 ::selection {
-  background: $yellow;
+  background: var(--color-highlight);
+  color: var(--color-accent);
 }
 
 html,
@@ -18,31 +20,11 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $white;
-  color: $dark-grey;
+  background-color: var(--color-background);
+  color: var(--color-body-text);
   font-family: $sans-serif-fonts;
   line-height: 1.5;
   width: 100%;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: $night;
-    color: $slate;
-    ::selection {
-      color: $black;
-      background: $yellow;
-    }
-    a,
-    strong,
-    .intro,
-    .experience .job__time,
-    .footer__copyright,
-    .status {
-      color: $off-white;
-    }
-    .section__content a:after {
-      background: $off-white;
-    }
-  }
 }
 
 a {
@@ -58,7 +40,7 @@ a {
     left: 0;
     width: 100%;
     height: 1px;
-    background: $black;
+    background: var(--color-accent);
     content: '';
     opacity: 0;
     transition: height 0.3s, opacity 0.3s, transform 0.3s;
@@ -120,7 +102,7 @@ img {
     flex-shrink: 0;
     width: 200px;
     margin-right: 70px;
-    color: $blue;
+    color: var(--color-accent);
     text-transform: uppercase;
     text-align: right;
     font-weight: $font-weight-bold;
