@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://csherland.github.io/sitemap.xml
+Sitemap: https://christiansherland.com/sitemap.xml
