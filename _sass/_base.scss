@@ -79,19 +79,10 @@ img {
 .section {
   display: flex;
   justify-content: center;
-  padding: 100px 170px;
-  @include desktop {
-    padding: 100px;
-  }
-  @include desktop {
-    padding: 50px;
-  }
   @include tablet {
     display: block;
   }
-  @include mobile {
-    padding: 50px 35px;
-  }
+  padding: 50px 35px;
   &__title {
     flex-shrink: 0;
     width: 200px;
