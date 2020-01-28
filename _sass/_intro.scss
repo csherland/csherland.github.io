@@ -9,9 +9,15 @@
   @include tablet {
     padding: 70px 50px;
   }
+  @include mobile {
+    padding: 15px;
+  }
 
   &__hello, &__tagline {
     font-size: $font-size-lg;
+    @include mobile {
+      font-size: 26px; // TODO: variable
+    }
   }
 
   &__hello {

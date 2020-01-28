@@ -20,4 +20,11 @@
       font-family: $monospace-fonts;
     }
   }
+
+  .resume {
+    @include tablet {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
