@@ -4,9 +4,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
-# Allow only one concurrent deployment per PR
+# Allow only one concurrent deployment per branch
 concurrency:
-  group: pr-preview-${{ github.event.pull_request.number }}
+  group: pr-preview-${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
@@ -34,15 +34,26 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: |
-          bundle exec jekyll build --baseurl "/pr-${{ github.event.pull_request.number }}"
+          # Sanitize branch name for URL (replace / with -, remove special chars)
+          BRANCH_NAME="${{ github.head_ref }}"
+          SANITIZED_BRANCH=$(echo "$BRANCH_NAME" | sed 's/[\/]/-/g' | sed 's/[^a-zA-Z0-9-]//g')
+          bundle exec jekyll build --baseurl "/$SANITIZED_BRANCH"
 
       - name: Upload artifact
         if: github.event.action != 'closed'
         uses: actions/upload-artifact@v4
         with:
-          name: pr-preview-${{ github.event.pull_request.number }}
+          name: preview-${{ github.head_ref }}
           path: _site/
           retention-days: 7
+
+      - name: Set sanitized branch name
+        if: github.event.action != 'closed'
+        id: branch
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+          SANITIZED_BRANCH=$(echo "$BRANCH_NAME" | sed 's/[\/]/-/g' | sed 's/[^a-zA-Z0-9-]//g')
+          echo "sanitized=$SANITIZED_BRANCH" >> $GITHUB_OUTPUT
 
       - name: Deploy preview to gh-pages-preview branch
         if: github.event.action != 'closed'
@@ -50,7 +61,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-          destination_dir: pr-${{ github.event.pull_request.number }}
+          destination_dir: ${{ steps.branch.outputs.sanitized }}
           publish_branch: gh-pages-preview
           keep_files: true
 
@@ -62,6 +73,10 @@ jobs:
             const prNumber = context.payload.pull_request.number;
             const runId = context.runId;
             const repo = context.repo;
+            const branchName = context.payload.pull_request.head.ref;
+
+            // Sanitize branch name for URL
+            const sanitizedBranch = branchName.replace(/\//g, '-').replace(/[^a-zA-Z0-9-]/g, '');
 
             // Construct URLs
             const artifactUrl = `https://github.com/${repo.owner}/${repo.repo}/actions/runs/${runId}`;
@@ -74,10 +89,10 @@ jobs:
               previewUrl = `⚠️ **Note**: This is a user site. Configure Netlify for live previews, or download the artifact below.`;
             } else {
               // For project sites
-              previewUrl = `🔗 **Live Preview**: https://${repo.owner}.github.io/${repo.repo}/pr-${prNumber}/\n\n*(Enable GitHub Pages from the \`gh-pages-preview\` branch in Settings > Pages)*`;
+              previewUrl = `🔗 **Live Preview**: https://${repo.owner}.github.io/${repo.repo}/${sanitizedBranch}/\n\n*(Enable GitHub Pages from the \`gh-pages-preview\` branch in Settings > Pages)*`;
             }
 
-            const comment = `## 🚀 PR Preview Build Complete!\n\n${previewUrl}\n\n📦 **Download Preview**: [View artifacts](${artifactUrl})\n\n---\n*Preview updates automatically with new commits. See [setup docs](.github/workflows/PR_PREVIEW_SETUP.md) for configuration.*`;
+            const comment = `## 🚀 PR Preview Build Complete!\n\n**Branch**: \`${branchName}\`\n\n${previewUrl}\n\n📦 **Download Preview**: [View artifacts](${artifactUrl})\n\n---\n*Preview updates automatically with new commits. See [setup docs](.github/workflows/PR_PREVIEW_SETUP.md) for configuration.*`;
 
             // Find existing comment
             const { data: comments } = await github.rest.issues.listComments({
@@ -115,13 +130,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Sanitize branch name
+          BRANCH_NAME="${{ github.head_ref }}"
+          SANITIZED_BRANCH=$(echo "$BRANCH_NAME" | sed 's/[\/]/-/g' | sed 's/[^a-zA-Z0-9-]//g')
+
           # Try to fetch and clean up the preview branch
           if git fetch origin gh-pages-preview 2>/dev/null; then
             git checkout gh-pages-preview
-            if [ -d "pr-${{ github.event.pull_request.number }}" ]; then
-              rm -rf pr-${{ github.event.pull_request.number }}
+            if [ -d "$SANITIZED_BRANCH" ]; then
+              rm -rf "$SANITIZED_BRANCH"
               git add .
-              git commit -m "Remove preview for PR #${{ github.event.pull_request.number }}"
+              git commit -m "Remove preview for branch $BRANCH_NAME (PR #${{ github.event.pull_request.number }})"
               git push origin gh-pages-preview
             fi
           fi
@@ -133,10 +152,11 @@ jobs:
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
+            const branchName = context.payload.pull_request.head.ref;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: `🧹 Preview for PR #${prNumber} has been cleaned up.`
+              body: `🧹 Preview for branch \`${branchName}\` has been cleaned up.`
             });
