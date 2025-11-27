@@ -31,19 +31,21 @@ jobs:
 
       - name: Build Jekyll site
         if: github.event.action != 'closed'
+        id: build
         env:
           JEKYLL_ENV: production
         run: |
           # Sanitize branch name for URL (replace / with -, remove special chars)
           BRANCH_NAME="${{ github.head_ref }}"
           SANITIZED_BRANCH=$(echo "$BRANCH_NAME" | sed 's/[\/]/-/g' | sed 's/[^a-zA-Z0-9-]//g')
+          echo "sanitized=$SANITIZED_BRANCH" >> $GITHUB_OUTPUT
           bundle exec jekyll build --baseurl "/$SANITIZED_BRANCH"
 
       - name: Upload artifact
         if: github.event.action != 'closed'
         uses: actions/upload-artifact@v4
         with:
-          name: preview-${{ github.head_ref }}
+          name: preview-${{ steps.build.outputs.sanitized }}
           path: _site/
           retention-days: 7
 
