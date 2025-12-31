@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Christian Sherland | Full-stack Software Engineer</title>
+<meta name="description" content="NYC based Software Engineer">
+<meta name="keywords" content="software development, web, csherland, christian sherland, full stack, cooper union, engineer, electrical">
+<meta itemprop="name" content="Christian Sherland | Full-stack Software Engineer">
+<meta itemprop="description" content="NYC based Software Engineer">
+<link rel="stylesheet" href="/csherland.github.io/pr-preview/pr-4/assets/css/main.css" hreflang="en-us">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9Y8ETYK3V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G9Y8ETYK3V');
+</script>
+
+  </head>
+  <body>
+    <div class="page">
+      <h1 id="claudemd">CLAUDE.md</h1>
+
+<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Jekyll-powered personal portfolio site for Christian Sherland, deployed via GitHub Pages. Content is data-driven through YAML files in <code class="language-plaintext highlighter-rouge">_data/</code>, with templates in <code class="language-plaintext highlighter-rouge">_includes/</code> and layouts in <code class="language-plaintext highlighter-rouge">_layouts/</code>.</p>
+
+<h2 id="development-commands">Development Commands</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install dependencies (required once or after Gemfile changes)</span>
+bundle <span class="nb">install</span>
+
+<span class="c"># Run local development server with live reload</span>
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+<span class="c"># Site runs at http://127.0.0.1:4000</span>
+
+<span class="c"># Build production output (validates before deployment)</span>
+bundle <span class="nb">exec </span>jekyll build
+
+<span class="c"># Sanity-check configuration</span>
+bundle <span class="nb">exec </span>jekyll doctor
+</code></pre></div></div>
+
+<h2 id="architecture">Architecture</h2>
+
+<h3 id="content-driven-design">Content-Driven Design</h3>
+<ul>
+  <li><strong>Data sources</strong>: <code class="language-plaintext highlighter-rouge">_data/experience.yml</code> and <code class="language-plaintext highlighter-rouge">_data/projects.yml</code> contain all structured content</li>
+  <li><strong>Templates</strong>: <code class="language-plaintext highlighter-rouge">_includes/</code> contains reusable partials (intro.html, experience.html, background.html, footer.html, etc.)</li>
+  <li><strong>Page composition</strong>: <code class="language-plaintext highlighter-rouge">index.html</code> uses <code class="language-plaintext highlighter-rouge">default</code> layout and includes multiple partials to build the single-page site</li>
+  <li><strong>Styling</strong>: SCSS partials in <code class="language-plaintext highlighter-rouge">_sass/</code> are compiled via <code class="language-plaintext highlighter-rouge">assets/css/main.scss</code>; Sass compression is enabled in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+</ul>
+
+<h3 id="jekyll-configuration">Jekyll Configuration</h3>
+<ul>
+  <li>Plugins: <code class="language-plaintext highlighter-rouge">jekyll-sitemap</code>, <code class="language-plaintext highlighter-rouge">jemoji</code></li>
+  <li>Markdown: kramdown</li>
+  <li>Build excludes: Gemfile, Gemfile.lock, gemspecs, README.md, LICENSE.md</li>
+  <li>Site metadata (name, title, description, social links) lives in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+</ul>
+
+<h3 id="file-organization">File Organization</h3>
+<ul>
+  <li>Layouts: <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> (base template), <code class="language-plaintext highlighter-rouge">_layouts/project.html</code> (for project pages)</li>
+  <li>Assets: <code class="language-plaintext highlighter-rouge">assets/img/</code> for images, <code class="language-plaintext highlighter-rouge">assets/resume.pdf</code> for downloads</li>
+  <li>Use kebab-case for asset filenames</li>
+</ul>
+
+<h2 id="coding-conventions">Coding Conventions</h2>
+
+<ul>
+  <li><strong>Indentation</strong>: 2 spaces for HTML, Liquid, YAML, and SCSS</li>
+  <li><strong>Naming</strong>: kebab-case for files/assets, snake_case for Liquid variables</li>
+  <li><strong>Front matter</strong>: minimal and ordered (layout, title, description, then custom fields)</li>
+  <li><strong>SCSS</strong>: group variables/mixins in <code class="language-plaintext highlighter-rouge">_sass/</code>, avoid inline styles</li>
+  <li><strong>Liquid</strong>: prefer filters over inline Ruby</li>
+</ul>
+
+<h2 id="testing">Testing</h2>
+
+<ul>
+  <li>No automated tests; validate by running <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and manually checking navigation, images, and social links</li>
+  <li>Before pushing, run <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> to catch Liquid/YAML errors</li>
+  <li>Verify <code class="language-plaintext highlighter-rouge">_data</code> changes render correctly in the local build</li>
+</ul>
+
+<h2 id="git-workflow">Git Workflow</h2>
+
+<ul>
+  <li><strong>Commit style</strong>: short, imperative messages (e.g., “Update experience.yml”, “Update _config.yml”)</li>
+  <li><strong>GitHub CLI</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">gh auth status</code> — confirm authentication</li>
+      <li><code class="language-plaintext highlighter-rouge">gh repo view --web</code> — open repo in browser</li>
+      <li><code class="language-plaintext highlighter-rouge">gh pr create --fill --web</code> — create PR after push</li>
+      <li><code class="language-plaintext highlighter-rouge">gh pr status</code> — check CI status</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="important-notes">Important Notes</h2>
+
+<ul>
+  <li>This is a GitHub Pages site; changes pushed to <code class="language-plaintext highlighter-rouge">master</code> automatically deploy</li>
+  <li>Site configuration (URLs, email, social links) is public-facing and stored in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+  <li>All content in <code class="language-plaintext highlighter-rouge">_data/</code> drives the rendered site via Liquid templates in <code class="language-plaintext highlighter-rouge">_includes/</code></li>
+</ul>
+
+    </div>
+  </body>
+</html>
