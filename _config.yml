@@ -26,6 +26,7 @@ exclude:
   - '*.gemspec'
   - 'README.md'
   - 'LICENSE.md'
+  - 'vendor'
 
 plugins:
   - jekyll-sitemap
