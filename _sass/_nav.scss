@@ -1,0 +1,127 @@
+.nav {
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding: $space-sm $space-md;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+
+  @include mobile {
+    padding: $space-sm;
+  }
+
+  &__home {
+    font-family: $font-serif;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: var(--color-body-text);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $space-xs;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__toggle-icon,
+  &__toggle-icon::before,
+  &__toggle-icon::after {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    background: var(--color-body-text);
+    border-radius: 1px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  &__toggle-icon {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -6px;
+    }
+
+    &::after {
+      top: 6px;
+    }
+  }
+
+  // Animate to X when open
+  &.is-open &__toggle-icon {
+    background: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $space-md;
+
+    @include mobile {
+      flex-basis: 100%;
+      flex-direction: column;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+
+    a {
+      font-family: $font-sans;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: var(--color-muted);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+
+      @include mobile {
+        padding: $space-sm 0;
+        border-top: 1px solid var(--color-border);
+      }
+    }
+  }
+
+  // Expand links when open
+  &.is-open &__links {
+    @include mobile {
+      max-height: 10rem;
+    }
+  }
+}

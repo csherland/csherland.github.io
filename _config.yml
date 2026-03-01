@@ -27,6 +27,7 @@ exclude:
   - 'README.md'
   - 'LICENSE.md'
   - 'vendor'
+  - 'docs'
 
 plugins:
   - jekyll-sitemap
