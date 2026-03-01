@@ -1,0 +1,68 @@
+---
+layout: default
+title: Photography | Christian Sherland
+description: Photography by Christian Sherland
+permalink: /photography/
+---
+
+<section class="section photography fade-in">
+  <div class="section__title">Photography</div>
+  <div class="section__content">
+    {% if site.data.photography.size > 0 %}
+    <div class="photo-grid">
+      {% for photo in site.data.photography %}
+      <div class="photo-grid__item">
+        <img
+          src="{{ site.baseurl }}/{{ photo.image }}"
+          alt="{{ photo.alt }}"
+          {% if photo.title %}data-title="{{ photo.title }}"{% endif %}
+          loading="lazy"
+          class="photo-grid__img"
+          onclick="openLightbox(this)"
+        >
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>Photos coming soon.</p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox__close" onclick="closeLightbox(event)" aria-label="Close">&times;</button>
+  <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  <div class="lightbox__title" id="lightbox-title"></div>
+</div>
+
+<script>
+  function openLightbox(img) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxTitle = document.getElementById('lightbox-title');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    var title = img.getAttribute('data-title');
+    lightboxTitle.textContent = title || '';
+    lightboxTitle.style.display = title ? 'block' : 'none';
+    lightbox.classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (e.target.classList.contains('lightbox') || e.target.classList.contains('lightbox__close')) {
+      var lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('is-active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      var lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('is-active');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
