@@ -54,10 +54,12 @@ bundle <span class="nb">exec </span>jekyll doctor
 
 <h3 id="content-driven-design">Content-Driven Design</h3>
 <ul>
-  <li><strong>Data sources</strong>: <code class="language-plaintext highlighter-rouge">_data/experience.yml</code> and <code class="language-plaintext highlighter-rouge">_data/projects.yml</code> contain all structured content</li>
+  <li><strong>Data sources</strong>: <code class="language-plaintext highlighter-rouge">_data/experience.yml</code>, <code class="language-plaintext highlighter-rouge">_data/education.yml</code>, and <code class="language-plaintext highlighter-rouge">_data/projects.yml</code> contain all structured content</li>
   <li><strong>Templates</strong>: <code class="language-plaintext highlighter-rouge">_includes/</code> contains reusable partials (intro.html, experience.html, background.html, footer.html, etc.)</li>
   <li><strong>Page composition</strong>: <code class="language-plaintext highlighter-rouge">index.html</code> uses <code class="language-plaintext highlighter-rouge">default</code> layout and includes multiple partials to build the single-page site</li>
   <li><strong>Styling</strong>: SCSS partials in <code class="language-plaintext highlighter-rouge">_sass/</code> are compiled via <code class="language-plaintext highlighter-rouge">assets/css/main.scss</code>; Sass compression is enabled in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+  <li><strong>Theming</strong>: Light/dark mode via <code class="language-plaintext highlighter-rouge">prefers-color-scheme</code> media query and CSS custom properties defined in <code class="language-plaintext highlighter-rouge">_sass/_globals.scss</code></li>
+  <li><strong>Animations</strong>: Fade-in scroll animations using IntersectionObserver, implemented inline in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code></li>
 </ul>
 
 <h3 id="jekyll-configuration">Jekyll Configuration</h3>
@@ -73,6 +75,14 @@ bundle <span class="nb">exec </span>jekyll doctor
   <li>Layouts: <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> (base template), <code class="language-plaintext highlighter-rouge">_layouts/project.html</code> (for project pages)</li>
   <li>Assets: <code class="language-plaintext highlighter-rouge">assets/img/</code> for images, <code class="language-plaintext highlighter-rouge">assets/resume.pdf</code> for downloads</li>
   <li>Use kebab-case for asset filenames</li>
+</ul>
+
+<h2 id="cicd">CI/CD</h2>
+
+<ul>
+  <li><strong>Deploy</strong> (<code class="language-plaintext highlighter-rouge">.github/workflows/deploy.yml</code>): On push to <code class="language-plaintext highlighter-rouge">master</code>, builds with <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> and deploys to <code class="language-plaintext highlighter-rouge">gh-pages</code> branch via <code class="language-plaintext highlighter-rouge">peaceiris/actions-gh-pages@v4</code></li>
+  <li><strong>PR Preview</strong> (<code class="language-plaintext highlighter-rouge">.github/workflows/pr-preview.yml</code>): Builds PR branches and deploys previews via <code class="language-plaintext highlighter-rouge">rossjrw/pr-preview-action@v1</code></li>
+  <li><strong>Custom domain</strong>: <code class="language-plaintext highlighter-rouge">christiansherland.com</code> configured via <code class="language-plaintext highlighter-rouge">CNAME</code> file</li>
 </ul>
 
 <h2 id="coding-conventions">Coding Conventions</h2>
