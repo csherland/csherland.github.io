@@ -5,6 +5,13 @@
     {% include analytics.html %}
   </head>
   <body>
+    <nav class="nav">
+      <a href="{{ site.baseurl }}/" class="nav__home">Christian Sherland</a>
+      <div class="nav__links">
+        <a href="{{ site.baseurl }}/photography/">Photography</a>
+        <a href="{{ site.baseurl }}/assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </nav>
     <div class="page">
       {{ content }}
     </div>
