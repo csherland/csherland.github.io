@@ -5,17 +5,17 @@
 
   .job {
     padding: $space-sm 0;
-    padding-left: $space-md;
+    padding-left: $space-sm;
     border-left: 2px solid var(--color-border);
     position: relative;
 
     &::before {
       content: '';
       position: absolute;
-      left: -5px;
-      top: $space-sm;
-      width: 8px;
-      height: 8px;
+      left: -4px;
+      top: calc(#{$space-sm} + 0.5em);
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background-color: var(--color-accent);
     }
