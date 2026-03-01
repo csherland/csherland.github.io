@@ -26,10 +26,12 @@ bundle exec jekyll doctor
 ## Architecture
 
 ### Content-Driven Design
-- **Data sources**: `_data/experience.yml` and `_data/projects.yml` contain all structured content
+- **Data sources**: `_data/experience.yml`, `_data/education.yml`, and `_data/projects.yml` contain all structured content
 - **Templates**: `_includes/` contains reusable partials (intro.html, experience.html, background.html, footer.html, etc.)
 - **Page composition**: `index.html` uses `default` layout and includes multiple partials to build the single-page site
 - **Styling**: SCSS partials in `_sass/` are compiled via `assets/css/main.scss`; Sass compression is enabled in `_config.yml`
+- **Theming**: Light/dark mode via `prefers-color-scheme` media query and CSS custom properties defined in `_sass/_globals.scss`
+- **Animations**: Fade-in scroll animations using IntersectionObserver, implemented inline in `_layouts/default.html`
 
 ### Jekyll Configuration
 - Plugins: `jekyll-sitemap`, `jemoji`
@@ -41,6 +43,12 @@ bundle exec jekyll doctor
 - Layouts: `_layouts/default.html` (base template), `_layouts/project.html` (for project pages)
 - Assets: `assets/img/` for images, `assets/resume.pdf` for downloads
 - Use kebab-case for asset filenames
+
+## CI/CD
+
+- **Deploy** (`.github/workflows/deploy.yml`): On push to `master`, builds with `bundle exec jekyll build` and deploys to `gh-pages` branch via `peaceiris/actions-gh-pages@v4`
+- **PR Preview** (`.github/workflows/pr-preview.yml`): Builds PR branches and deploys previews via `rossjrw/pr-preview-action@v1`
+- **Custom domain**: `christiansherland.com` configured via `CNAME` file
 
 ## Coding Conventions
 
