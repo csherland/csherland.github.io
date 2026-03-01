@@ -5,8 +5,11 @@
     {% include analytics.html %}
   </head>
   <body>
-    <nav class="nav">
+    <nav class="nav" id="nav">
       <a href="{{ site.baseurl }}/" class="nav__home">Christian Sherland</a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav()">
+        <span class="nav__toggle-icon"></span>
+      </button>
       <div class="nav__links">
         <a href="{{ site.baseurl }}/photography/">Photography</a>
         <a href="{{ site.baseurl }}/assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -28,6 +31,14 @@
         }, { threshold: 0.1 });
         elements.forEach(function (el) { observer.observe(el); });
       });
+    </script>
+    <script>
+      function toggleNav() {
+        var nav = document.getElementById('nav');
+        var toggle = nav.querySelector('.nav__toggle');
+        var isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      }
     </script>
   </body>
 </html>
