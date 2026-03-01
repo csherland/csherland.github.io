@@ -1,41 +1,61 @@
 /**
- * Color Schemes
+ * Color Schemes - Warm Minimal
  */
 :root {
-  --color-background: white;
-  --color-body-text: #36363c;
-  --color-highlight: #ffd460;
-  --color-accent: #007bff;
+  --color-background: #FAFAF7;
+  --color-body-text: #1A1A2E;
+  --color-accent: #E07A5F;
+  --color-accent-hover: #C4593F;
+  --color-highlight: #F2CC8F;
+  --color-muted: #6B7280;
+  --color-border: #E5E5E0;
+  --color-surface: #F0EFEB;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #2d4059;
-    --color-body-text: #ffffff;
-    --color-accent: #ea5455;
+    --color-background: #1A1A2E;
+    --color-body-text: #EDEDE9;
+    --color-accent: #E8A87C;
+    --color-accent-hover: #F2CC8F;
+    --color-highlight: #E07A5F;
+    --color-muted: #9CA3AF;
+    --color-border: #2D2D44;
+    --color-surface: #232340;
   }
 }
 
 // Font families
-$sans-serif-fonts: 'Helvetic Neue', system, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-$monospace-fonts: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; 
+$font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+$font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+$font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
 // Font weights
 $font-weight-bold: 700;
 $font-weight-semibold: 600;
+$font-weight-medium: 500;
 $font-weight-normal: 400;
-$font-weight-light: 300;
 
 // Font sizes
-$font-size-lg: 38px;
-$font-size-md: 18px;
-$font-size-sm: 12px;
+$font-size-hero: clamp(2.5rem, 5vw, 3.5rem);
+$font-size-xl: 1.5rem;
+$font-size-lg: 1.25rem;
+$font-size-md: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
 
-// Sizes & Breakpoints 
-$site-max-width: 1440px;
+// Layout
+$site-max-width: 680px;
 $desktop-width: 1024px;
 $tablet-width: 768px;
 $mobile-width: 480px;
+
+// Spacing scale
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 2rem;
+$space-lg: 4rem;
+$space-xl: 6rem;
 
 @mixin transition {
   transition: all 0.2s ease-in-out;

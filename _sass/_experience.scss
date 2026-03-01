@@ -1,29 +1,100 @@
-.experience {
+.experience,
+.education {
   .jobs {
-    margin-bottom: 75px;
+    margin-bottom: $space-md;
+    border-left: 2px solid var(--color-border);
+    padding-left: $space-sm;
   }
+
   .job {
-    margin-bottom: 25px;
+    padding: $space-sm 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: calc(-#{$space-sm} - 3px);
+      top: calc(#{$space-sm} + 0.55rem);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+    }
+
     .time-place {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       @include mobile {
         display: block;
       }
     }
+
     &__company {
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-lg;
+
+      a {
+        color: var(--color-body-text);
+
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
     }
+
     &__time {
       font-size: $font-size-sm;
-      font-family: $monospace-fonts;
+      font-family: $font-mono;
+      color: var(--color-muted);
+    }
+
+    &__position {
+      font-size: $font-size-sm;
+      color: var(--color-muted);
+      margin-top: 0.25rem;
+    }
+
+    &__roles {
+      margin-top: $space-xs;
+    }
+
+    &__role {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.2rem 0;
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &__role-time {
+      font-size: $font-size-xs;
+      font-family: $font-mono;
+      color: var(--color-muted);
     }
   }
 
   .resume {
+    margin-top: $space-md;
+
+    a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: 2rem;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: var(--color-body-text);
+
+      &:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+      }
+    }
+
     @include tablet {
-      width: 100%;
       text-align: center;
     }
   }

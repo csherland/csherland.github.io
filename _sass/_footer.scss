@@ -1,45 +1,49 @@
 .footer {
   max-width: $site-max-width;
   margin: 0 auto;
+  border-top: 1px solid var(--color-border);
+  padding: $space-md;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px;
-  @include desktop {
-    padding: 80px 60px;
-  }
+
   @include tablet {
-    display: block;
+    flex-direction: column;
+    text-align: center;
+    gap: $space-sm;
   }
+
   @include mobile {
-    padding: 50px 30px;
+    padding: $space-md $space-sm;
   }
+
   &__copyright {
+    font-size: $font-size-xs;
+    color: var(--color-muted);
     font-weight: $font-weight-normal;
-    width: 200px;
-    @include tablet {
-      width: auto;
-      text-align: center;
-      margin-bottom: 25px;
+
+    p {
+      margin: 0;
     }
   }
+
   &__links {
-    @include tablet {
-      display: flex;
-      justify-content: center;
-    }
+    display: flex;
+    gap: $space-md;
+
     a {
-      position: relative;
-      display: inline-block;
-      color: var(--color-link-text) !important;
-      font-weight: $font-weight-semibold;
-      margin: 0 15px;
-      outline: none;
-      margin: 0 10px;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+
       .text {
-        font-size: $font-size-sm;
         display: inline;
-        letter-spacing: 1px;
       }
     }
   }

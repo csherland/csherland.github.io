@@ -1,5 +1,5 @@
 <section class="section experience">
-  <div class="section__title">Experience & Education</div>
+  <div class="section__title">Experience</div>
   <div class="section__content">
     <div class="jobs">
       {% for job in site.data.experience %}
@@ -10,7 +10,37 @@
           </div>
           <div class="job__time">{{job.time}}</div>
         </div>
+        {% if job.roles %}
+        <div class="job__roles">
+          {% for role in job.roles %}
+          <div class="job__role">
+            <span class="job__position">{{role.position}}</span>
+            <span class="job__role-time">{{role.time}}</span>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
         <div class="job__position">{{job.position}}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section education">
+  <div class="section__title">Education</div>
+  <div class="section__content">
+    <div class="jobs">
+      {% for edu in site.data.education %}
+      <div class="job">
+        <div class="time-place">
+          <div class="job__company">
+            <a href="{{edu.url}}" target="_blank" rel="noopener">{{edu.school}}</a>
+          </div>
+          <div class="job__time">{{edu.time}}</div>
+        </div>
+        <div class="job__position">{{edu.degree}}</div>
       </div>
       {% endfor %}
     </div>
@@ -18,6 +48,5 @@
     <div class="resume">
       <a href="{{ site.baseurl }}/assets/resume.pdf">View My Resume 📄</a>
     </div>
-
   </div>
 </section>

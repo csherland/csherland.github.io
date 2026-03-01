@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -10,7 +11,7 @@ html {
 
 ::selection {
   background: var(--color-highlight);
-  color: var(--color-accent);
+  color: var(--color-body-text);
 }
 
 html, body {
@@ -18,36 +19,20 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background);
   color: var(--color-body-text);
-  font-family: $sans-serif-fonts;
-  line-height: 1.5;
+  font-family: $font-sans;
+  font-size: $font-size-md;
+  line-height: 1.7;
 }
 
 a {
   @include transition;
   text-decoration: none;
-  font-weight: $font-weight-bold;
-  color: inherit;
-  position: relative;
-  display: inline-block;
-  &:after {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--color-accent);
-    content: '';
-    opacity: 0;
-    transition: height 0.3s, opacity 0.3s, transform 0.3s;
-    transform: translateY(-5px);
-  }
+  font-weight: $font-weight-semibold;
+  color: var(--color-accent);
+
   &:hover,
   &:focus {
-    &:after {
-      height: 2px;
-      border-radius: 3px;
-      opacity: 1;
-      transform: translateY(-2px);
-    }
+    color: var(--color-accent-hover);
   }
 }
 
@@ -77,48 +62,38 @@ img {
 }
 
 .section {
-  display: flex;
-  justify-content: center;
-  @include tablet {
-    display: block;
-  }
-  padding: 50px 35px;
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding: $space-lg $space-md;
+
   @include mobile {
-    padding: 15px;
+    padding: $space-md $space-sm;
   }
+
+  & + .section {
+    border-top: 1px solid var(--color-border);
+  }
+
   &__title {
-    flex-shrink: 0;
-    width: 200px;
-    margin-right: 50px;
-    color: var(--color-accent);
-    text-transform: uppercase;
-    text-align: right;
-    font-weight: $font-weight-bold;
-    letter-spacing: 2px;
-    @include tablet {
-      text-align: left;
-      width: auto;
-    }
-    @include mobile {
-      margin-right: 0px;
-    }
+    font-family: $font-serif;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: var(--color-body-text);
+    margin-bottom: $space-md;
+    text-transform: none;
+    text-align: left;
+    letter-spacing: normal;
   }
+
   &__content {
     font-weight: $font-weight-normal;
     font-size: $font-size-md;
     width: 100%;
-    max-width: 650px;
-    @include tablet {
-      padding-top: 30px;
-      padding-left: 25px;
-    }
-    @include mobile {
-      padding-left: 10px;
-      padding-top: 10px;
-    }
+    line-height: 1.7;
+
     p {
       margin-top: 0;
-      margin-bottom: 25px;
+      margin-bottom: $space-sm;
     }
   }
 }
