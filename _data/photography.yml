@@ -1,0 +1,12 @@
+# Add photos here. Each entry needs:
+#   image: path relative to site root (e.g., assets/img/photography/my-photo.jpg)
+#   alt: descriptive alt text (required for accessibility)
+#   title: optional title shown in lightbox
+#
+# Before adding photos, resize to max 1600px wide:
+#   sips --resizeW 1600 *.jpg
+#
+# Example:
+# - image: assets/img/photography/sunset-over-bay.jpg
+#   alt: Golden sunset reflecting over a calm bay
+#   title: Sunset Over the Bay
