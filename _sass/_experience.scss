@@ -1,29 +1,79 @@
 .experience {
   .jobs {
-    margin-bottom: 75px;
+    margin-bottom: $space-md;
   }
+
   .job {
-    margin-bottom: 25px;
+    padding: $space-sm 0;
+    padding-left: $space-md;
+    border-left: 2px solid var(--color-border);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: $space-sm;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+    }
+
     .time-place {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       @include mobile {
         display: block;
       }
     }
+
     &__company {
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-lg;
+
+      a {
+        color: var(--color-body-text);
+
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
     }
+
     &__time {
       font-size: $font-size-sm;
-      font-family: $monospace-fonts;
+      font-family: $font-mono;
+      color: var(--color-muted);
+    }
+
+    &__position {
+      font-size: $font-size-sm;
+      color: var(--color-muted);
+      margin-top: 0.25rem;
     }
   }
 
   .resume {
+    margin-top: $space-md;
+
+    a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: 2rem;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: var(--color-body-text);
+
+      &:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+      }
+    }
+
     @include tablet {
-      width: 100%;
       text-align: center;
     }
   }

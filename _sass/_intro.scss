@@ -1,58 +1,64 @@
 .intro {
-  padding: 120px 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   max-width: $site-max-width;
   margin: 0 auto;
+  padding: $space-xl $space-md;
+  text-align: center;
 
   @include tablet {
-    padding: 70px 50px;
+    padding: $space-lg $space-md;
   }
   @include mobile {
-    padding: 15px;
-  }
-
-  &__hello, &__tagline {
-    font-size: $font-size-lg;
-    @include mobile {
-      font-size: 26px; // TODO: variable
-    }
+    padding: $space-lg $space-sm;
   }
 
   &__hello {
-    font-weight: $font-weight-light;
+    font-family: $font-sans;
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: $space-xs;
   }
 
   &__tagline {
-    font-weight: $font-weight-light;
-    max-width: $site-max-width / 2;
+    font-family: $font-serif;
+    font-size: $font-size-hero;
+    font-weight: $font-weight-normal;
+    line-height: 1.2;
+    margin-bottom: $space-md;
+
     .name {
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-semibold;
+      color: var(--color-accent);
     }
+
     .christian {
-      width: 60px;
-      height: 60px;
-      margin-top: -7px;
+      width: 50px;
+      height: 50px;
+      margin-top: -5px;
       background-image: url('../img/memoji.png');
     }
   }
 
   &__contact {
-    font-size: $font-size-md;
+    font-family: $font-sans;
+    font-size: $font-size-sm;
     font-weight: $font-weight-normal;
+
     a {
       @include transition;
-      font-weight: $font-weight-normal;
       display: inline-block;
-      padding: 2px 3px;
-      box-shadow: inset 0 -3px 0 var(--color-accent);
-      &:after {
-        display: none;
-      }
+      padding: 0.6rem 1.5rem;
+      border: 1.5px solid var(--color-accent);
+      border-radius: 2rem;
+      color: var(--color-accent);
+      font-weight: $font-weight-medium;
+      letter-spacing: 0.5px;
+
       &:hover {
-        box-shadow: inset 0 -33px 0 0 var(--color-accent);
-        color: var(--color-highlight);
+        background-color: var(--color-accent);
+        color: var(--color-background);
       }
     }
   }
