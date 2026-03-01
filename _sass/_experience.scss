@@ -1,19 +1,19 @@
 .experience {
   .jobs {
     margin-bottom: $space-md;
+    border-left: 2px solid var(--color-border);
+    padding-left: $space-sm;
   }
 
   .job {
     padding: $space-sm 0;
-    padding-left: $space-sm;
-    border-left: 2px solid var(--color-border);
     position: relative;
 
     &::before {
       content: '';
       position: absolute;
-      left: -4px;
-      top: calc(#{$space-sm} + 0.5em);
+      left: calc(-#{$space-sm} - 3px);
+      top: calc(#{$space-sm} + 0.55rem);
       width: 6px;
       height: 6px;
       border-radius: 50%;
