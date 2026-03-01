@@ -25,8 +25,11 @@
 
   </head>
   <body>
-    <nav class="nav">
+    <nav class="nav" id="nav">
       <a href="/pr-preview/pr-8/" class="nav__home">Christian Sherland</a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav()">
+        <span class="nav__toggle-icon"></span>
+      </button>
       <div class="nav__links">
         <a href="/pr-preview/pr-8/photography/">Photography</a>
         <a href="/pr-preview/pr-8/assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -95,6 +98,23 @@
           });
         }, { threshold: 0.1 });
         elements.forEach(function (el) { observer.observe(el); });
+      });
+    </script>
+    <script>
+      function toggleNav() {
+        var nav = document.getElementById('nav');
+        var toggle = nav.querySelector('.nav__toggle');
+        var isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      }
+
+      document.querySelectorAll('.nav__links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var nav = document.getElementById('nav');
+          if (nav.classList.contains('is-open')) {
+            toggleNav();
+          }
+        });
       });
     </script>
   </body>
