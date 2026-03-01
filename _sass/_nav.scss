@@ -1,0 +1,43 @@
+.nav {
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding: $space-sm $space-md;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+
+  @include mobile {
+    padding: $space-sm;
+  }
+
+  &__home {
+    font-family: $font-serif;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: var(--color-body-text);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $space-md;
+
+    a {
+      font-family: $font-sans;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: var(--color-muted);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
