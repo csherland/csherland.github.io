@@ -1,5 +1,5 @@
 <section class="section experience">
-  <div class="section__title">Experience & Education</div>
+  <div class="section__title">Experience</div>
   <div class="section__content">
     <div class="jobs">
       {% for job in site.data.experience %}
@@ -19,5 +19,24 @@
       <a href="{{ site.baseurl }}/assets/resume.pdf">View My Resume 📄</a>
     </div>
 
+  </div>
+</section>
+
+<section class="section education">
+  <div class="section__title">Education</div>
+  <div class="section__content">
+    <div class="jobs">
+      {% for edu in site.data.education %}
+      <div class="job">
+        <div class="time-place">
+          <div class="job__company">
+            <a href="{{edu.url}}" target="_blank" rel="noopener">{{edu.school}}</a>
+          </div>
+          <div class="job__time">{{edu.time}}</div>
+        </div>
+        <div class="job__position">{{edu.degree}}</div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
