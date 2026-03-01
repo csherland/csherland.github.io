@@ -10,7 +10,18 @@
           </div>
           <div class="job__time">{{job.time}}</div>
         </div>
+        {% if job.roles %}
+        <div class="job__roles">
+          {% for role in job.roles %}
+          <div class="job__role">
+            <span class="job__position">{{role.position}}</span>
+            <span class="job__role-time">{{role.time}}</span>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
         <div class="job__position">{{job.position}}</div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>

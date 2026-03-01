@@ -54,6 +54,26 @@
       color: var(--color-muted);
       margin-top: 0.25rem;
     }
+
+    &__roles {
+      margin-top: $space-xs;
+    }
+
+    &__role {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.2rem 0;
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &__role-time {
+      font-size: $font-size-xs;
+      font-family: $font-mono;
+      color: var(--color-muted);
+    }
   }
 
   .resume {

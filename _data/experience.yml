@@ -10,15 +10,11 @@
 
 - company: Dow Jones
   url: https://www.dowjones.com
-  time: August 2017 - July 2018
-  position: Principal Software Engineer
-
-- company: Dow Jones
-  url: https://www.dowjones.com
-  time: August 2016 - July 2017
-  position: Senior Software Engineer
-
-- company: Dow Jones
-  url: https://www.dowjones.com
-  time: June 2014 - July 2016
-  position: Software Engineer
+  time: June 2014 - July 2018
+  roles:
+    - position: Principal Software Engineer
+      time: August 2017 - July 2018
+    - position: Senior Software Engineer
+      time: August 2016 - July 2017
+    - position: Software Engineer
+      time: June 2014 - July 2016
